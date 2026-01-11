@@ -1,0 +1,27 @@
+# Core framework
+fastapi==0.121.0
+uvicorn==0.38.0
+
+# Database
+sqlalchemy==2.0.44
+alembic==1.17.1
+psycopg2-binary==2.9.11
+
+# Config
+python-dotenv==1.2.1
+
+# Auth & Security
+python-jose[cryptography]==3.5.0
+passlib==1.7.4
+bcrypt==5.0.0
+python-multipart==0.0.20
+
+# HTTP client (for SSO)
+httpx==0.28.1
+
+# Validation
+pydantic==2.12.4
+pydantic[email]
+
+# Testing
+pytest==8.4.2
