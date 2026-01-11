@@ -17,7 +17,7 @@ class UserBase(BaseModel):
     user-related request and response models.
     """
     username: str
-    email: EmailStr = Field(..., example="user@mouritech.com")
+    email: EmailStr
 
     @field_validator("username")
     @classmethod
@@ -38,26 +38,6 @@ class UserBase(BaseModel):
             raise ValueError("Username must be between 3 and 100 characters")
         return v
 
-    @field_validator("email")
-    @classmethod
-    def validate_email_domain(cls, v):
-        """
-        Ensure email belongs to the allowed domain.
-
-        Args:
-            value (EmailStr): Email address.
-
-        Returns:
-            EmailStr: Validated email.
-
-        Raises:
-            ValueError: If email domain is not allowed.
-        """
-        allowed_domains = "mouritech.com"
-        domain = v.split("@")[-1].lower()
-        if domain != allowed_domains:
-            raise ValueError("Email domain must be of mouritech")
-        return v
 
 
 # USER CREATION SCHEMA

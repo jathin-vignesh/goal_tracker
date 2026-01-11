@@ -52,7 +52,7 @@ def register_user(db: Session, user: UserCreate) -> UserResponse:
         # Case 2: User exists via SSO only
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail="Account already exists via SSO. Please login using Google or Microsoft."
+            detail="Account already exists via SSO. Please login using Google."
         )
 
     # Check username
